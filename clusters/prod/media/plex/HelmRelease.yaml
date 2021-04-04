@@ -1,0 +1,55 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: plex
+  namespace: media
+spec:
+  chart:
+    spec:
+      chart: plex
+      # renovate: registryUrl=https://k8s-at-home.com/charts/
+      version: 4.0.1
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home
+        namespace: flux-system
+  values:
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: "nginx"
+        kubernetes.io/tls-acme: "false"
+      hosts:
+        - host: plex.zolnierowi.cz
+    env:
+      LIBVA_DRIVER_NAME: i965
+    timezone: "Europe/Warsaw"
+    persistence:
+      config:
+        enabled: true
+        claimName: "openebs-hostpath-plex-config-pvc"
+        accessMode: ReadWriteOnce
+        size: 512Mi
+      transcode:
+        enabled: true
+        claimName: "nfs-transcode-pvc"
+        accessMode: ReadWriteMany
+      data:
+        enabled: true
+        claimName: "nfs-media-pvc"
+        accessMode: ReadWriteMany
+    podSecurityContext:
+      supplementalGroups:
+      - 44
+      - 109
+    resources:
+      requests:
+        gpu.intel.com/i915: 1
+        cpu: 200m
+        memory: 256Mi
+      limits:
+        gpu.intel.com/i915: 1
+        memory: 2048Mi
+  interval: 10m0s
+

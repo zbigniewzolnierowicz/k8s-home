@@ -1,0 +1,42 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: openebs-hostpath-plex-config-pvc
+  namespace: media
+spec:
+  storageClassName: openebs-hostpath
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 512Mi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-transcode-pv
+  namespace: media
+spec:
+  capacity:
+    storage: 256Gi
+  accessModes:
+    - ReadWriteMany
+  claimRef:
+    namespace: media
+    name: nfs-transcode-pvc
+  nfs:
+    server: 192.168.0.13
+    path: "/mnt/ChainsawMan-4.5TB-JBOD/Media/Transcode"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nfs-transcode-pvc
+  namespace: media
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 256Gi
