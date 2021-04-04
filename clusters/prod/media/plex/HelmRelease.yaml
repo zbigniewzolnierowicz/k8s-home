@@ -22,6 +22,9 @@ spec:
         kubernetes.io/tls-acme: "false"
       hosts:
         - host: plex.zolnierowi.cz
+          paths:
+            - path: /
+              pathType: Prefix
     env:
       LIBVA_DRIVER_NAME: i965
     timezone: "Europe/Warsaw"
