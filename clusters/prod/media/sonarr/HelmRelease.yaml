@@ -15,32 +15,47 @@ spec:
         namespace: flux-system
       interval: 1m
   values:
+    env:
+      TZ: Europe/Warsaw
+      PUID: 1000
+      PGID: 1000
+    persistence:
+      media:
+        enabled: true
+        existingClaim: "nfs-media-pvc"
+    additionalVolumeMounts:
+    - name: "downloads"
+      mountPath: "/downloads"
+    additionalVolumes:
+    - name: "downloads"
+      persistentVolumeClaim:
+        claimName: "local-downloads-pvc"
     ingress:
       enabled: true
       annotations:
         kubernetes.io/ingress.class: "nginx"
         kubernetes.io/tls-acme: "false"
       hosts:
-      - host: sonarr.zolnierowi.cz
-        paths:
-        - path: /
-          pathType: Prefix
-      # tls:
-      # - hosts:
-      #   - sonarr.zolnierowi.cz
-      #   secretName: sonarr-cert
-      additionalIngresses:
-      - enabled: true
-        nameSuffix: "api"
-        annotations:
-          kubernetes.io/ingress.class: "nginx"
-        hosts:
         - host: sonarr.zolnierowi.cz
           paths:
-          - path: /api
+          - path: /
             pathType: Prefix
         # tls:
         # - hosts:
-        #   - "sonarr.zolnierowi.cz"
+        #   - sonarr.zolnierowi.cz
         #   secretName: sonarr-cert
-        
+      additionalIngresses:
+        - enabled: true
+          nameSuffix: "api"
+          annotations:
+            kubernetes.io/ingress.class: "nginx"
+          hosts:
+            - host: sonarr.zolnierowi.cz
+              paths:
+              - path: /api
+                pathType: Prefix
+              # tls:
+              # - hosts:
+              #   - "sonarr.zolnierowi.cz"
+              #   secretName: sonarr-cert
+    
