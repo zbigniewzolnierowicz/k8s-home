@@ -1,0 +1,40 @@
+apiVersion: v1
+data:
+    password: ENC[AES256_GCM,data:YAptETuVPu487uHp,iv:tvYhQB5aTczGTSM4/EHcxqaRNI6kU7boG2jn4aDpDVE=,tag:Sk/mzwwUqSJOjAgmiixdSQ==,type:str]
+    user: ENC[AES256_GCM,data:sg4SOLXLR/8=,iv:AHgr4PHADzHNf/mcNaRXEtD3kkDPC7jwvgY1J55vDME=,tag:ke5lArL7o0j20D6s4mCbUQ==,type:str]
+kind: Secret
+metadata:
+    creationTimestamp: null
+    name: basic-auth
+    namespace: default
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2021-04-04T16:33:18Z"
+    mac: ENC[AES256_GCM,data:WpQrDKkcEJ3UcPjCLuFQNq2MWIZkZm4gVxFe18IOM0oxAi9owczxkNOlYtmLpOp7tCqSsDz2WLG0koSsbA4Y2trBaggHad/Rhg+Gi03iYEIldVCHbm9AdoyntFithAcgditrkQbTPpAWmOrswPJSOBKFN+a7JN1+c15cmcHfM8k=,iv:bC+FSDp+iQLJuNzCRFPTAcMKsQ4qDnkFgXJEnVK11/Y=,tag:W/V4wr1hVhIeiGIkVbkHCw==,type:str]
+    pgp:
+        - created_at: "2021-04-04T16:33:18Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMAw+gdcFLVNJbAQ//TCgO2cIVxyjcGDJMYiso0kEFd/P2VWg/hpirTHgx+kJm
+            FbpqqSWTXHm9LUtbeJRPVKc4CWVQbVYgEEwUFr0bxTis00m3GtJvLqp37EM1Txy+
+            EcOP9YRQ2F9IjGWUjgxVEgnNUk81DD4H0pMw9C0DTkUCUdt6jJr5bsHGrHZ2Xgi9
+            UacnTN/8Z9aU+CdQlv9TAqmdVZ+GwHPyIcx9J6CsHCjwjPGpkjoi5LccFM2XonhG
+            l2WyLzDSwL9zomnnDcHR7cTfw1rY+5BFS0AQFFO/Uj8IGZsazbtdtLAxwU7YM/ul
+            iG/LL0xfc3IoJn7ALPlGDv/52fDfz2FJ3+mzaZKCjrZVlQXMLWTs5bsdJI1SbXBI
+            CHnULZ26yqb61PHtpsHRmTIZxWZzjDaHY8vTGfPPVsYCyX2K98e3BkXId7SUNSHb
+            IowuBtt95fYu3jqcTW4LR48EZDfrQGNJcDWwAroXoIfFMMlVVY2SRE6Raw46EejK
+            mrQ7+XXCP/wjMa1mq9AEd99AnA1sC6WJ2DaC+yY3w2jDNVR7Z5pN7EfclRfgnC1k
+            iqnXfbSlVOk++cJauuBPz4IgdlNfxhgNYzrM+naX3miuOsVHTv8AlOfuaEaUf7IN
+            NUjtgimSBSKJoZrgIMsMVHxFRW97p7YTEecakXDZ91TWegWjUUKx5F8m+qJTbRXS
+            XgEnxgIeLGrVBxbjCY+n2S0mCcxv31uA7Lw2iRbJjTnBAYSOOzdSxPYQkKDOLCE3
+            w8XsAomVQimN599qeQZbzkzyP45caLRmpxp3GvtToigOw0xtCEUKbAVpcx8Su4Q=
+            =YWgh
+            -----END PGP MESSAGE-----
+          fp: 5467AFDE56F88163AE77BCFC55430DD40D553158
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.0
