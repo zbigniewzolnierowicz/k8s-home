@@ -18,10 +18,29 @@ spec:
     ingress:
       enabled: true
       annotations:
-        kubernetes.io/ingress.class: nginx
-        # kubernetes.io/tls-acme: "true"
-      labels:
-        ingressClassName: "nginx"
+        kubernetes.io/ingress.class: "nginx"
+        kubernetes.io/tls-acme: "false"
       hosts:
+      - host: sonarr.zolnierowi.cz
+        paths:
+        - path: /
+          pathType: Prefix
+      # tls:
+      # - hosts:
+      #   - sonarr.zolnierowi.cz
+      #   secretName: sonarr-cert
+      additionalIngresses:
+      - enabled: true
+        nameSuffix: "api"
+        annotations:
+          kubernetes.io/ingress.class: "nginx"
+        hosts:
         - host: sonarr.zolnierowi.cz
+          paths:
+          - path: /api
+            pathType: Prefix
+        # tls:
+        # - hosts:
+        #   - "sonarr.zolnierowi.cz"
+        #   secretName: sonarr-cert
         
