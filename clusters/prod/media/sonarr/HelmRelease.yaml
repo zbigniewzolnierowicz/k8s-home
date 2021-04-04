@@ -3,6 +3,7 @@ kind: HelmRelease
 metadata:
   name: sonarr
   namespace: media
+  cert-manager.io/issuer: "letsencrypt-staging"
 spec:
   interval: 5m
   chart:
@@ -43,10 +44,10 @@ spec:
           paths:
           - path: /
             pathType: Prefix
-        # tls:
-        # - hosts:
-        #   - sonarr.zolnierowi.cz
-        #   secretName: sonarr-cert
+          tls:
+          - hosts:
+            - sonarr.zolnierowi.cz
+            secretName: letsencrypt-staging-private-key
       additionalIngresses:
         - enabled: true
           nameSuffix: "api"
