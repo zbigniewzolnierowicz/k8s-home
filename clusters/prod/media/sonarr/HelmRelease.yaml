@@ -3,8 +3,6 @@ kind: HelmRelease
 metadata:
   name: sonarr
   namespace: media
-  annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-staging"
 spec:
   interval: 5m
   chart:
@@ -39,7 +37,8 @@ spec:
       enabled: true
       annotations:
         kubernetes.io/ingress.class: "nginx"
-        kubernetes.io/tls-acme: "false"
+        kubernetes.io/tls-acme: "true"
+        cert-manager.io/cluster-issuer: "letsencrypt-staging"
       hosts:
         - host: sonarr.zolnierowi.cz
           paths:
