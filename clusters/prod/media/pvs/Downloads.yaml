@@ -8,7 +8,7 @@ spec:
   capacity:
     storage: 100Gi
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   claimRef:
     namespace: media
     name: local-downloads-pvc
@@ -30,7 +30,7 @@ metadata:
   namespace: media
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
       storage: 100Gi
