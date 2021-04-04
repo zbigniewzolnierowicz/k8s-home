@@ -2,35 +2,28 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: local-downloads-pv
+  name: nfs-downloads-pv
   namespace: media
 spec:
   capacity:
-    storage: 100Gi
+    storage: 4Ti
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   claimRef:
     namespace: media
-    name: local-downloads-pvc
-  local:
-    path: /opt/mounts/down
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: kubernetes.io/hostname
-          operator: In
-          values:
-          - tumor3d-t480-zzolnierowicz
+    name: nfs-downloads-pvc
+  nfs:
+    server: 192.168.0.13
+    path: "/mnt/ChainsawMan-4.5TB-JBOD/Media/Downloads"
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: local-downloads-pvc
+  name: nfs-downloads-pvc
   namespace: media
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
-      storage: 100Gi
+      storage: 4Ti

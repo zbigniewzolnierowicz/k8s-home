@@ -2,35 +2,28 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: local-media-pv
+  name: nfs-media-pv
   namespace: media
 spec:
   capacity:
-    storage: 100Gi
+    storage: 4Ti
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   claimRef:
     namespace: media
-    name: local-media-pvc
-  local:
-    path: /opt/mounts/media
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: kubernetes.io/hostname
-          operator: In
-          values:
-          - tumor3d-t480-zzolnierowicz
+    name: nfs-media-pvc
+  nfs:
+    server: 192.168.0.13
+    path: "/mnt/ChainsawMan-4.5TB-JBOD/Media/Videos"
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: local-media-pvc
+  name: nfs-media-pvc
   namespace: media
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
-      storage: 100Gi
+      storage: 4Ti
