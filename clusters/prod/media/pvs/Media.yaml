@@ -14,6 +14,14 @@ spec:
     name: local-media-pvc
   local:
     path: /opt/mounts/media
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - tumor3d-t480-zzolnierowicz
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
