@@ -4,6 +4,8 @@ kind: HelmRelease
 metadata:
   name: plex
   namespace: media
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-staging"
 spec:
   chart:
     spec:
