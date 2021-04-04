@@ -20,16 +20,19 @@ spec:
       PUID: 1000
       PGID: 1000
     persistence:
+      config:
+        enabled: true
+        existingClaim: "openebs-hostpath-sonarr-config-pvc"
       media:
         enabled: true
-        existingClaim: "local-media-pvc"
+        existingClaim: "nfs-media-pvc"
     additionalVolumeMounts:
     - name: "downloads"
       mountPath: "/downloads"
     additionalVolumes:
     - name: "downloads"
       persistentVolumeClaim:
-        claimName: "local-downloads-pvc"
+        claimName: "nfs-downloads-pvc"
     ingress:
       enabled: true
       annotations:
