@@ -58,8 +58,8 @@ spec:
               paths:
               - path: /api
                 pathType: Prefix
-              # tls:
-              # - hosts:
-              #   - "sonarr.zolnierowi.cz"
-              #   secretName: sonarr-cert
+                tls:
+                - hosts:
+                  - "sonarr.zolnierowi.cz"
+                  secretName: letsencrypt-production-private-key
     
