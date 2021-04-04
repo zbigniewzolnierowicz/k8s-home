@@ -22,7 +22,7 @@ spec:
     persistence:
       media:
         enabled: true
-        existingClaim: "nfs-media-pvc"
+        existingClaim: "local-media-pvc"
     additionalVolumeMounts:
     - name: "downloads"
       mountPath: "/downloads"
