@@ -13,7 +13,7 @@ spec:
       version: v1.3.0-alpha.1
       sourceRef:
         kind: HelmRepository
-        name: jetstack-charts
+        name: jetstack
         namespace: flux-system
       interval: 5m
   values:
