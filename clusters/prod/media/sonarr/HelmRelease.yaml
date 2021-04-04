@@ -38,7 +38,7 @@ spec:
       annotations:
         kubernetes.io/ingress.class: "nginx"
         kubernetes.io/tls-acme: "true"
-        cert-manager.io/cluster-issuer: "letsencrypt-staging"
+        cert-manager.io/cluster-issuer: "letsencrypt-production"
       hosts:
         - host: sonarr.zolnierowi.cz
           paths:
@@ -47,7 +47,7 @@ spec:
           tls:
           - hosts:
             - sonarr.zolnierowi.cz
-            secretName: letsencrypt-staging-private-key
+            secretName: letsencrypt-production-private-key
       additionalIngresses:
         - enabled: true
           nameSuffix: "api"
