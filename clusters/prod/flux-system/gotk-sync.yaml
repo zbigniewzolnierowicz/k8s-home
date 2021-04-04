@@ -29,4 +29,3 @@ spec:
     provider: sops
     secretRef:
       name: sops-gpg
-      namespace: flux-system
