@@ -31,19 +31,13 @@ spec:
     persistence:
       config:
         enabled: true
-        claimName: "openebs-hostpath-plex-config-pvc"
-        accessMode: ReadWriteOnce
-        size: 512Mi
+        existingClaim: "openebs-hostpath-plex-config-pvc"
       transcode:
         enabled: true
-        claimName: "nfs-transcode-pvc"
-        accessMode: ReadWriteMany
-        size: 256Gi
+        existingClaim: "nfs-transcode-pvc"
       data:
         enabled: true
-        claimName: "nfs-media-pvc"
-        accessMode: ReadWriteMany
-        size: 4Ti
+        existingClaim: "nfs-media-pvc"
     podSecurityContext:
       supplementalGroups:
       - 44
