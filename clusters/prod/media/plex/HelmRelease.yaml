@@ -53,5 +53,5 @@ spec:
       limits:
         gpu.intel.com/i915: 1
         memory: 2048Mi
-  interval: 10m0s
+  interval: 1m0s
 
