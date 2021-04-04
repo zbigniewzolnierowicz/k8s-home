@@ -35,10 +35,12 @@ spec:
         enabled: true
         claimName: "nfs-transcode-pvc"
         accessMode: ReadWriteMany
+        size: 256Gi
       data:
         enabled: true
         claimName: "nfs-media-pvc"
         accessMode: ReadWriteMany
+        size: 4Ti
     podSecurityContext:
       supplementalGroups:
       - 44
