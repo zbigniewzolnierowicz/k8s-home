@@ -47,12 +47,13 @@ spec:
           tls:
           - hosts:
             - sonarr.zolnierowi.cz
-            secretName: sonarr-certificate-secret
       additionalIngresses:
         - enabled: true
           nameSuffix: "api"
           annotations:
             kubernetes.io/ingress.class: "nginx"
+            kubernetes.io/tls-acme: "true"
+            cert-manager.io/cluster-issuer: "letsencrypt-production"
           hosts:
             - host: sonarr.zolnierowi.cz
               paths:
@@ -61,5 +62,4 @@ spec:
                 tls:
                 - hosts:
                   - "sonarr.zolnierowi.cz"
-                  secretName: sonarr-certificate-secret
     
