@@ -1,0 +1,15 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: zolnierowi-cz
+  namespace: ingress-nginx
+spec:
+  secretName: zolnierowi-cz-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "zolnierowi.cz"
+  dnsNames:
+  - "zolnierowi.cz"
+  - "*.zolnierowi.cz"
