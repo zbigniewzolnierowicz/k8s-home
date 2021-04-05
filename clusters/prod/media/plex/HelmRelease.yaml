@@ -20,7 +20,7 @@ spec:
       annotations:
         kubernetes.io/ingress.class: "nginx"
         kubernetes.io/tls-acme: "true"
-        cert-manager.io/cluster-issuer: "letsencrypt-staging"
+        cert-manager.io/cluster-issuer: "letsencrypt-production"
       hosts:
         - host: plex.zolnierowi.cz
           paths:
