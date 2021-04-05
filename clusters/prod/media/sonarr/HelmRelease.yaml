@@ -47,7 +47,6 @@ spec:
           tls:
           - hosts:
             - sonarr.zolnierowi.cz
-            secretName: zolnierowi-cz-tls
       additionalIngresses:
         - enabled: true
           nameSuffix: "api"
@@ -63,5 +62,4 @@ spec:
                 tls:
                 - hosts:
                   - sonarr.zolnierowi.cz
-                  secretName: zolnierowi-cz-tls
     

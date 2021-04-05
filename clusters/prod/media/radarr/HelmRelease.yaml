@@ -47,7 +47,6 @@ spec:
           tls:
           - hosts:
             - radarr.zolnierowi.cz
-            secretName: letsencrypt-production-private-key
       additionalIngresses:
         - enabled: true
           nameSuffix: "api"
