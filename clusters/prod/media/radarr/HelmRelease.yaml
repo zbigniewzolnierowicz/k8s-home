@@ -44,9 +44,6 @@ spec:
           paths:
           - path: /
             pathType: Prefix
-          tls:
-          - hosts:
-            - radarr.zolnierowi.cz
       additionalIngresses:
         - enabled: true
           nameSuffix: "api"
@@ -57,8 +54,4 @@ spec:
               paths:
               - path: /api
                 pathType: Prefix
-              # tls:
-              # - hosts:
-              #   - "radarr.zolnierowi.cz"
-              #   secretName: radarr-cert
     

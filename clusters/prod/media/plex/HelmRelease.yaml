@@ -26,9 +26,6 @@ spec:
           paths:
             - path: /
               pathType: Prefix
-          tls:
-            - hosts:
-              - plex.zolnierowi.cz
     env:
       LIBVA_DRIVER_NAME: i965
     timezone: "Europe/Warsaw"
