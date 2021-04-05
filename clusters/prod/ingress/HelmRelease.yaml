@@ -15,5 +15,6 @@ spec:
         namespace: flux-system
       interval: 1m
   values:
-    extraArgs:
-      default-ssl-certificate: "ingress-nginx/zolnierowi-cz-tls"
+    controller:
+      extraArgs:
+        default-ssl-certificate: "ingress-nginx/zolnierowi-cz-tls"
