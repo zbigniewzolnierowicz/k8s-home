@@ -16,4 +16,4 @@ spec:
       interval: 1m
   values:
     extraArgs:
-      default-ssl-certificate: ingress-nginx/zolnierowi-cz-tls
+      default-ssl-certificate: "ingress-nginx/zolnierowi-cz-tls"
