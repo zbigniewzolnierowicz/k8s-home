@@ -1,0 +1,39 @@
+apiVersion: v1
+data:
+    api-token: ENC[AES256_GCM,data:+RhApBjmvo4DjoR13Apf1aaMl7pg2jh42Y9XUux1/nTp90V3lGrD29WWJgpxpKoC5VSsSKRaWdU=,iv:9yb39Yah7A57hWrIBPZYf7LUe8lR+WjaYtPsf7jviJY=,tag:pirrnc4NRDw77k4siPKQnA==,type:str]
+kind: Secret
+metadata:
+    creationTimestamp: null
+    name: cloudflare-token
+    namespace: cert-manager
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2021-04-05T09:32:23Z"
+    mac: ENC[AES256_GCM,data:nfcvvdP/i9i7I0jQr7HxjHCnOnEefbkCS2dN/XqShISUZYq5uxGHbDGC3BWzSPIjxDerPx0PODprPGBarPKuWOyI4VlPXcQdwF8Pw5tYzarDamY/R9AwDYGonpLZcmWzPm5M2sNA7ToycKjNeYcRLxNAm3rXRwaRcBEUI7mEhzo=,iv:C3a6osbmYF/2IJlNU73IxGJCUBgsY4lY7J9wBXZ7UYA=,tag:DdIqRzyhDtpyQEdhAZR4GA==,type:str]
+    pgp:
+        - created_at: "2021-04-05T09:32:22Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA0e/jPhnGxxRARAAsNfM5TxiU+UVQGBfOlbQbpSx2CXbiXKSq8EJV9UALuWr
+            UuCrxHe8oa+U5maNpkeWnln0JUzxSliQicaFhc92Nv3gK5cmJG6A6tCT4hEtOVJN
+            3yTL5cgqRqTaOMQF6ExYVYDLJAyYxnirs/eUMTg1rLvvzg8CqSJpL9fWfIybv1Jk
+            6aRhjZ6wqp5RwCqlPGyjpw9A/CnW7FiGMdQeZs9k6WSEBrUvj5FkDIWaxewvH5uB
+            q1XuHMJLwGkgv/f1rMXRCUVf+jxiyvDVNxit6zZTj6WB54y0XhPAegO7pk+HJAmD
+            316YFoRzPaGl2s43fnKp0u2uz9Ur8d6ts/RJ07ug7AiUPgePDmRZGnZ3MlgTnbZO
+            OkjXECpxX7yq2y8w/eOyDeIdy7sY0S3emamspo/AIBBzIdJ8XMO/Qy6+VtLL8fHN
+            EurcVl5hqYwbXhiuA/sE7pSQ3izQecwcjsCCULGufXcnrwyWA7uG1FTtrwLc4B69
+            RyGVl1CrIHeFHxUJ9qoa0oPrldxT9aPmNlIXEw2W8+FQnY18mjM9sB2gycWubkHw
+            lGagZqiE7DXQqs9YLJWPCM2pKDriAvIg8XJPask0kIIOYAfBYeJCrz491xnBZIAj
+            9JiC2V0c+jM9cmd3wXAM4ifxEun2m0+y64V2+g5qRGfIbNhqn5Opv2oij5EJVsTS
+            XgEehaYKdIK84VS8Z1CzURcYx9yf5SxPP3k67SS06x8+IiiwQTwlzD9X1h6S/qWu
+            rwUY1iJ128ksoDuDX3/8PIQ0S9o9PonBeM+PDq0G7yTSBmK3FLiOZ0FgbQLPbcM=
+            =3QAa
+            -----END PGP MESSAGE-----
+          fp: 2E15AC9FF37CE42BF90D71A9C7A530DF82FB58F8
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.0
