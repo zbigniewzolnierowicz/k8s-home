@@ -1,0 +1,14 @@
+---
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: sonarr-certificate
+  namespace: kube-system
+spec:
+  secretName: sonarr-certificate-secret
+  commonName: "sonarr.zolnierowi.cz"
+  dnsNames:
+  - 'sonarr.zolnierowi.cz'
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer

@@ -1,0 +1,14 @@
+---
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: plex-certificate
+  namespace: kube-system
+spec:
+  secretName: plex-certificate-secret
+  commonName: "plex.zolnierowi.cz"
+  dnsNames:
+  - 'plex.zolnierowi.cz'
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer
