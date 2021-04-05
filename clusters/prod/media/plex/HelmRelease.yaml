@@ -29,6 +29,7 @@ spec:
           tls:
             - hosts:
               - plex.zolnierowi.cz
+              secretName: zolnierowi-cz-tls
     env:
       LIBVA_DRIVER_NAME: i965
     timezone: "Europe/Warsaw"
