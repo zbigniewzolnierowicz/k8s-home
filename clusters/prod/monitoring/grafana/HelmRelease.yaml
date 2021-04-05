@@ -19,12 +19,12 @@ spec:
   values:
     ingress:
       enabled: true
+      ingressClassName: nginx
       annotations:
         kubernetes.io/ingress.class: "nginx"
         kubernetes.io/tls-acme: "true"
         cert-manager.io/cluster-issuer: "letsencrypt-production"
       hosts:
-        - host: grafana.zolnierowi.cz
-          paths:
-          - path: /
-            pathType: Prefix
+        - grafana.zolnierowi.cz
+      path: /
+      pathType: Prefix
