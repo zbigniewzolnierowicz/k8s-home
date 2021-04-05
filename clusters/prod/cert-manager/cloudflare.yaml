@@ -5,14 +5,15 @@ kind: Secret
 metadata:
     creationTimestamp: null
     name: cloudflare-token
+    namespace: cert-manager
 sops:
     kms: []
     gcp_kms: []
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2021-04-05T09:41:37Z"
-    mac: ENC[AES256_GCM,data:ottlFJLZovLdm0kpl6oyAyVZC/lq79Dq8MlO/vSw85LbhBgZyZpChnyumtrfy5t0RBorBShVm+Mg3uc/DkxpzYEreepk+mt4iv0iyAx6QLDqwn3aTioYL071pSXR6VUfxB4sE6SM00ksD6QN43o0AxYVwDC13F57bm08CZezGfo=,iv:/ZD3akoyDQ4Hp06iTm/NZtOG+UFh3FM2L9JF/09Bllc=,tag:4tGjukBGNZVJsfCUjHSddw==,type:str]
+    lastmodified: "2021-04-05T09:44:40Z"
+    mac: ENC[AES256_GCM,data:mqMYWwxLGz2YfCFPzah1wzYWG3EgsK9A97agSLC4MttQovkrY52Til4/9yFQe2DSKJjiCeYLbjEyktmQvMqQoNcsaesaqAWOyVS4XG296CWe4AgAxwD9O7Jm4bLyC9+XHW+e+3UHJG2qW+7tyJdM6JzuTxcL8eFdNlBfguokUaY=,iv:36R5rOpvWa0ZfUX8lXgi+nBKpjXRfcSPlJJnxq6h+ek=,tag:x14f/cq1eqFj0BOVbhU6qw==,type:str]
     pgp:
         - created_at: "2021-04-05T09:41:37Z"
           enc: |
