@@ -8,13 +8,16 @@ spec:
   chart:
     spec:
       chart: qbittorrent
-      version: '9.1.1'
+      version: '9.2.0'
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home
         namespace: flux-system
       interval: 1m
   values:
+    image:
+      repository: linuxserver/qbittorrent
+      tag: unstable-version-4.4.0202104101617-7268-650bf15dbubuntu20.04.1
     env:
       TZ: Europe/Warsaw
       PUID: 1000

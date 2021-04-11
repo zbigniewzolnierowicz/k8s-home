@@ -15,6 +15,9 @@ spec:
         namespace: flux-system
       interval: 1m
   values:
+    image:
+      repository: "linuxserver/sonarr"
+      tag: "develop-version-3.0.6.1206"
     env:
       TZ: Europe/Warsaw
       PUID: 1000
