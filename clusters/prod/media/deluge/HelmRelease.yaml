@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: deluge
-      version: '3.2.0'
+      version: '3.3.0'
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home
@@ -30,13 +30,14 @@ spec:
         enabled: true
         existingClaim: "nfs-downloads-pvc"
     ingress:
-      enabled: true
-      annotations:
-        kubernetes.io/ingress.class: "nginx"
-        kubernetes.io/tls-acme: "true"
-        cert-manager.io/cluster-issuer: "letsencrypt-production"
-      hosts:
-        - host: torrent.zolnierowi.cz
-          paths:
-          - path: /
-            pathType: Prefix
+      main:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: "nginx"
+          kubernetes.io/tls-acme: "true"
+          cert-manager.io/cluster-issuer: "letsencrypt-production"
+        hosts:
+          - host: torrent.zolnierowi.cz
+            paths:
+            - path: /
+              pathType: Prefix

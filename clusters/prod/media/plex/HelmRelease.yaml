@@ -9,7 +9,7 @@ spec:
     spec:
       chart: plex
       # renovate: registryUrl=https://k8s-at-home.com/charts/
-      version: 4.1.1
+      version: 5.3.0
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home
@@ -17,18 +17,19 @@ spec:
   values:
     image:
       repository: "ghcr.io/k8s-at-home/plex"
-      tag: "v1.22.2.4282-a97b03fad"
+      tag: "v1.23.2.4656-85f0adf5b"
     ingress:
-      enabled: true
-      annotations:
-        kubernetes.io/ingress.class: "nginx"
-        kubernetes.io/tls-acme: "true"
-        cert-manager.io/cluster-issuer: "letsencrypt-production"
-      hosts:
-        - host: plex.zolnierowi.cz
-          paths:
-            - path: /
-              pathType: Prefix
+      main:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: "nginx"
+          kubernetes.io/tls-acme: "true"
+          cert-manager.io/cluster-issuer: "letsencrypt-production"
+        hosts:
+          - host: plex.zolnierowi.cz
+            paths:
+              - path: /
+                pathType: Prefix
     env:
       LIBVA_DRIVER_NAME: i965
     timezone: "Europe/Warsaw"

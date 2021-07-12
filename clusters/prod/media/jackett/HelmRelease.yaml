@@ -24,13 +24,14 @@ spec:
         enabled: true
         existingClaim: "openebs-hostpath-jackett-config-pvc"
     ingress:
-      enabled: true
-      annotations:
-        kubernetes.io/ingress.class: "nginx"
-        kubernetes.io/tls-acme: "true"
-        cert-manager.io/cluster-issuer: "letsencrypt-production"
-      hosts:
-        - host: jackett.zolnierowi.cz
-          paths:
-          - path: /
-            pathType: Prefix
+      main:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: "nginx"
+          kubernetes.io/tls-acme: "true"
+          cert-manager.io/cluster-issuer: "letsencrypt-production"
+        hosts:
+          - host: jackett.zolnierowi.cz
+            paths:
+            - path: /
+              pathType: Prefix
