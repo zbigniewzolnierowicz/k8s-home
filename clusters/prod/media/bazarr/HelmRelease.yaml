@@ -37,24 +37,14 @@ spec:
       persistentVolumeClaim:
         claimName: "nfs-downloads-pvc"
     ingress:
-      enabled: true
-      annotations:
-        kubernetes.io/ingress.class: "nginx"
-        kubernetes.io/tls-acme: "true"
-        cert-manager.io/cluster-issuer: "letsencrypt-production"
-      hosts:
-        - host: bazarr.zolnierowi.cz
-          paths:
-          - path: /
-            pathType: Prefix
-      additionalIngresses:
-        - enabled: true
-          nameSuffix: "api"
-          annotations:
-            kubernetes.io/ingress.class: "nginx"
-          hosts:
-            - host: bazarr.zolnierowi.cz
-              paths:
-              - path: /api
-                pathType: Prefix
-    
+      main:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: "nginx"
+          kubernetes.io/tls-acme: "true"
+          cert-manager.io/cluster-issuer: "letsencrypt-production"
+        hosts:
+          - host: bazarr.zolnierowi.cz
+            paths:
+            - path: /
+              pathType: Prefix
